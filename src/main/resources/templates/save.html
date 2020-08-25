@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form>
+        <table>
+            <tr>
+                <td>章节：</td>
+                <td>
+                    <input type="text" id="101" name="101">
+                </td>
+            </tr>
+            <tr>
+                <td>1:</td>
+                <td><input type="text" id="1" name="1"></td>
+            </tr>
+            <tr>
+                <td>2:</td>
+                <td><input type="text" id="2" name="2"></td>
+            </tr>
+            <tr>
+                <td>3:</td>
+                <td><input type="text" id="3" name="3"></td>
+            </tr>
+            <tr>
+                <td>4:</td>
+                <td><input type="text" id="4" name="4"></td>
+            </tr>
+            <tr>
+                <td>5:</td>
+                <td><input type="text" id="5" name="5"></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<script type="text/javascript">
+    // function a(){
+    //     var form={};
+    //     var rolename = $("#rolename").val();
+    //     var remark = $("#remark").val();
+    //     form["rolename"]=rolename;
+    //     form["remark"]=remark;
+    //     console.log(JSON.stringify(form));
+    //     $.ajax({
+    //         enctype: "multipart/form-data",
+    //         type:'POST',
+    //         contentType: "application/json; charset=utf-8",
+    //         dataType:'json',
+    //         url:"/admin/test-t",
+    //         data:JSON.stringify(form),
+    //         success:function(result){
+    //             //。。。
+    //         }
+    //     });
+    // }
+</script>
+</body>
+</html>

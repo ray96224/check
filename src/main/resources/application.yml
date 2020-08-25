@@ -1,0 +1,18 @@
+server:
+  servlet:
+    context-path: /check
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/check?serverTimezone=GMT%2B8&characterEncoding=utf-8&autoReconnect=true
+    username: root
+    password: 123456
+  thymeleaf:
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    use-generated-keys: true

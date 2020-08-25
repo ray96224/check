@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" href="css/checkpage.css" th:href="@{/asserts/css/checkpage.css}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Checking answer</h2>
+<!--        <label for="questionNumber" class="sr-only">Email address</label>-->
+        <input type="text" id="questionNumber" class="form-control" placeholder="题号" required autofocus>
+<!--        <label for="questionAnswer" class="sr-only">Password</label>-->
+        <input type="text" id="questionAnswer" class="form-control" placeholder="答案" required>
+        <button class="btn btn-lg btn-secondary btn-block" type="submit">查找</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">上一题</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">下一题</button>
+    </form>
+</div>
+
+<script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+<script type="text/javascript">
+</script>
+</body>
+</html>

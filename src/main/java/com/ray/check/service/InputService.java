@@ -1,0 +1,8 @@
+package com.ray.check.service;
+
+import com.ray.check.dto.QuestionDto;
+
+public interface InputService {
+
+    void save(QuestionDto questionDto);
+}
