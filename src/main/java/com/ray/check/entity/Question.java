@@ -30,4 +30,13 @@ public class Question {
     public void setAnswer(String answer) {
         this.answer = answer == null ? null : answer.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", number=" + number +
+                ", answer='" + answer + '\'' +
+                '}';
+    }
 }

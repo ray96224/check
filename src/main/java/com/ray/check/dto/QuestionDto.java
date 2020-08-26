@@ -23,4 +23,12 @@ public class QuestionDto {
     public void setChapterNumber(Integer chapterNumber) {
         this.chapterNumber = chapterNumber;
     }
+
+    @Override
+    public String toString() {
+        return "QuestionDto{" +
+                "questions=" + questions +
+                ", chapterNumber=" + chapterNumber +
+                '}';
+    }
 }
