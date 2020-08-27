@@ -11,12 +11,16 @@
 <div class="container">
     <div class="card text-center" style="width: 18rem; margin: 0 auto">
         <div class="card-body">
-            <button type="button" class="btn btn-outline-secondary btn-lg btn-block">首页</button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block">AAA</button>
             <br>
+<!--            <div class="list-group">-->
+<!--                <a class="list-group-item list-group-item-action">第一章</a>-->
+<!--                <a class="list-group-item list-group-item-action">第二章</a>-->
+<!--                <a class="list-group-item list-group-item-action">第三章</a>-->
+<!--            </div>-->
             <div class="list-group">
-                <a class="list-group-item list-group-item-action">第一章</a>
-                <a class="list-group-item list-group-item-action">第二章</a>
-                <a class="list-group-item list-group-item-action">第三章</a>
+                <a class="list-group-item list-group-item-action" th:href="" th:each="chapter:${chapters}">第[[${chapter.number}]]章</a>
             </div>
         </div>
     </div>
@@ -25,7 +29,8 @@
 <script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
 <script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
+
 </script>
 </body>
 </html>

@@ -9,24 +9,23 @@
 </head>
 <body>
 <div class="container">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Checking answer</h2>
-<!--        <label for="questionNumber" class="sr-only">Email address</label>-->
-        <input type="text" id="questionNumber" class="form-control" placeholder="题号" required autofocus>
-<!--        <label for="questionAnswer" class="sr-only">Password</label>-->
-        <input type="text" id="questionAnswer" class="form-control" placeholder="答案" required>
+    <div class="card text-center" style="width: 18rem; margin: 0 auto">
+        <div class="card-body">
 
-        <input type="text" id="chapterNumber" class="form-control" placeholder="答案" required>
-        <button class="btn btn-lg btn-secondary btn-block" type="submit">查找</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">上一题</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">下一题</button>
-    </form>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">AAA</button>
+            <br>
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action" th:each="chapter:${chapters}">第[[${chapter.number}]]章</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
 <script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
+
 </script>
 </body>
 </html>

@@ -1,17 +1,20 @@
 package com.ray.check.controller;
 
+import com.ray.check.dao.ChapterMapper;
+import com.ray.check.dao.ChapterQuestionMapper;
+import com.ray.check.dao.QuestionMapper;
 import com.ray.check.dto.QuestionDto;
+import com.ray.check.entity.Chapter;
 import com.ray.check.entity.Question;
 import com.ray.check.service.InputService;
-import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpRequest;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -19,16 +22,29 @@ public class MainController {
 
     @Autowired
     InputService inputService;
+    @Resource
+    ChapterMapper chapterMapper;
+    @Resource
+    QuestionMapper questionMapper;
+    @Resource
+    ChapterQuestionMapper chapterQuestionMapper;
 
-
-    @RequestMapping("/testPage")
-    public String testPage(){
-        return "test";
+    @RequestMapping("/")
+    public String index(Model model){
+        List<Chapter> chapters = chapterMapper.selectByExample(null);
+        model.addAttribute("chapters", chapters);
+        return "index";
     }
 
-    @RequestMapping("/testPage1")
-    public String testPage1(){
-        return "test1";
+    @RequestMapping("/singleCheck/{chapterId}")
+    public String singleCheck(@PathVariable Integer chapterId){
+
+        return "singleCheck";
+    }
+
+    @RequestMapping("/testPage2")
+    public String testPage2(){
+        return "test2";
     }
 
     @RequestMapping("/savePage")
