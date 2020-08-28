@@ -12,11 +12,14 @@
     <div class="card text-center" style="width: 18rem; margin: 0 auto">
         <div class="card-body">
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block">AAA</button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block">梦文瞄答案</button>
             <br>
             <div class="list-group">
-                <a class="list-group-item list-group-item-action" th:each="chapter:${chapters}">第[[${chapter.number}]]章</a>
+                <a th:href="@{/singleCheck/}+${chapter.id}" class="list-group-item list-group-item-action" th:each="chapter:${chapters}">第[[${chapter.number}]]章</a>
             </div>
+            <br>
+            <a th:href="@{/savePage}" type="button" class="btn btn-primary btn-block">添加新章节</a>
+            <br>
         </div>
     </div>
 </div>

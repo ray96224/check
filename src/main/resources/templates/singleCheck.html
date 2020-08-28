@@ -11,24 +11,24 @@
 <div class="container">
         <div class="card text-center" style="width: 18rem; margin: 0 auto">
             <div class="card-body">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">首页</button>
+                <a th:href="@{/}" type="button" class="btn btn-secondary btn-lg btn-block">首页</a>
                 <br>
                 <div style="color: gray">
-                    第一章
+                    第[[${questionDto.chapter.number}]]章
                 </div>
                 <br>
                 <div>
-                    <span style="font-size: large">No.78</span>&nbsp;&nbsp;&nbsp;&nbsp;<b style="font-size: x-large">A</b>
+                    <span id="number" style="font-size: large">No.1</span>&nbsp;&nbsp;&nbsp;&nbsp;<b id="answer" style="font-size: x-large">[[${questionDto.questions[0].answer}]]</b>
                 </div>
                 <br>
                 <br>
                 <div>
-                    <button type="button" class="btn btn-info float-left" style="width: 49%">上一题</button>
-                    <button type="button" class="btn btn-info float-right" style="width: 49%">下一题</button>
+                    <button id="previous" type="button" class="btn btn-info float-left" style="width: 49%">上一题</button>
+                    <button id="next" type="button" class="btn btn-info float-right" style="width: 49%">下一题</button>
                 </div>
                 <br>
                 <br>
-                <button type="button" class="btn btn-primary btn-block">查看本章全部</button>
+                <a th:href="@{/allCheck/}+${questionDto.chapter.id}" type="button" class="btn btn-primary btn-block">查看本章全部</a>
                 <br>
 
             </div>
@@ -38,7 +38,35 @@
 <script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
 <script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
 <script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
-<script type="text/javascript">
+<script type="text/javascript" th:inline="javascript">
+    var data = [[${questionDto}]];
+
+    var questionNumber = 0;
+    var questionAnswer = "";
+
+    //索引
+    var indexNumber = 0;
+    $("#next").click(function () {
+        if (indexNumber == 99){
+            return ;
+        }
+        indexNumber += 1;
+        questionNumber = data.questions[indexNumber].number;
+        questionAnswer = data.questions[indexNumber].answer;
+        $("#number").text("No." + questionNumber)
+        $("#answer").text(questionAnswer);
+
+    })
+    $("#previous").click(function () {
+        if (indexNumber == 0){
+            return ;
+        }
+        indexNumber -= 1;
+        questionNumber = data.questions[indexNumber].number;
+        questionAnswer = data.questions[indexNumber].answer;
+        $("#number").text("No." + questionNumber)
+        $("#answer").text(questionAnswer);
+    })
 </script>
 </body>
 </html>

@@ -28,10 +28,8 @@ public class InputServiceImpl implements InputService {
     @Override
     public void save(QuestionDto questionDto) {
         List<Question> questions = questionDto.getQuestions();
-        Integer chapterNumber = questionDto.getChapterNumber();
         //保存章节
-        Chapter chapter = new Chapter();
-        chapter.setNumber(chapterNumber);
+        Chapter chapter = questionDto.getChapter();
         chapterMapper.insert(chapter);
         for (Question question : questions){
             //保存题目

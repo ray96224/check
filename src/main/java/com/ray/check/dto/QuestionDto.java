@@ -1,12 +1,15 @@
 package com.ray.check.dto;
 
+import com.ray.check.entity.Chapter;
 import com.ray.check.entity.Question;
 
 import java.util.List;
 
 public class QuestionDto {
     List<Question> questions;
-    Integer chapterNumber;
+//    Integer chapterNumber;
+
+    Chapter chapter;
 
     public List<Question> getQuestions() {
         return questions;
@@ -16,19 +19,19 @@ public class QuestionDto {
         this.questions = questions;
     }
 
-    public Integer getChapterNumber() {
-        return chapterNumber;
+    public Chapter getChapter() {
+        return chapter;
     }
 
-    public void setChapterNumber(Integer chapterNumber) {
-        this.chapterNumber = chapterNumber;
+    public void setChapter(Chapter chapter) {
+        this.chapter = chapter;
     }
 
     @Override
     public String toString() {
         return "QuestionDto{" +
                 "questions=" + questions +
-                ", chapterNumber=" + chapterNumber +
+                ", chapter=" + chapter +
                 '}';
     }
 }

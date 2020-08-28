@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" href="css/checkpage.css" th:href="@{/asserts/css/checkpage.css}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="card text-center" style="width: 18rem; margin: 0 auto">
+        <div class="card-body">
+            <a th:href="@{/}" type="button" class="btn btn-secondary btn-lg btn-block">首页</a>
+            <br>
+            <ul class="list-group list-group-flush">
+<!--                <li class="list-group-item">1-10 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">11-20 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">21-30 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">31-40 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">41-50 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">51-60 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">61-70 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">71-80 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">81-90 ： ABBCA ABBCA</li>-->
+<!--                <li class="list-group-item">91-100 ： ABBCA ABBCA</li>-->
+            </ul>
+            <br>
+            <a th:href="@{/singleCheck/}+${questionDto.chapter.id}" type="button" class="btn btn-primary btn-block">返回单个查看</a>
+            <br>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+    var data = [[${questionDto}]];
+    console.log(data);
+
+    for (var i = 1; i <= 10; i++){
+        var s = "";
+        for (var j = i*10 - 10; j < i*10; j++){
+            s += data.questions[j].answer;
+            if (data.questions[j].number - j == 5){
+                s += ","
+            }
+        }
+        var li = $("<li></li>").addClass("list-group-item").text(i*10-10 + "-" + i*10 + " : " + s);
+        $("ul").append(li);
+    }
+
+</script>
+</body>
+</html>

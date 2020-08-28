@@ -2,45 +2,44 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}">
+    <link rel="stylesheet" href="css/checkpage.css" th:href="@{/asserts/css/checkpage.css}">
     <title>Title</title>
 </head>
 <body>
 <div>
-    <form th:action="@{/saveData}" method="post" autocomplete="off">
-        <table>
-            <tr>
-                <td>章节：</td>
-                <td>
-                    <input type="text" id="0" name="0">
-                </td>
-            </tr>
+    <div class="card text-center" style="width: 18rem; margin: 0 auto">
+        <div class="card-body">
+            <form th:action="@{/saveData}" method="post" autocomplete="off">
+                <a th:href="@{/}" type="button" class="btn btn-secondary btn-lg btn-block">首页</a>
+                <br>
+                <table>
+                    <tr>
+                        <td>章节：</td>
+                        <td>
+                            <input type="text" id="0" name="0">
+                        </td>
+                    </tr>
 
-            <tr th:each="i:${#numbers.sequence(1,100)}">
-                <td>[[${i}]]</td>
-                <td><input type="text" th:name="${i}"></td>
-            </tr>
+                    <tr th:each="i:${#numbers.sequence(1,100)}">
+                        <td>[[${i}]]</td>
+                        <td><input type="text" th:name="${i}"></td>
+                    </tr>
 
-        </table>
-        <button type="submit">提交</button>
-    </form>
+                </table>
+                <br>
+                <button type="submit" class="btn btn-primary btn-block">提交</button>
+            </form>
+        </div>
+    </div>
 
 </div>
 <script src="js/jquery-3.4.1.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<script src="js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
+<script src="js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
 <script type="text/javascript">
 
-    // var basePath = [[${#request.getContextPath()}]];
-    //
-    // $("#save button").click(function () {
-    //     $.ajax({
-    //         url: basePath+"/testData",
-    //         data: $("#save").serialize(),
-    //         dataType: "json",
-    //         type: "POST",
-    //         success: function (result){
-    //             alert(result)
-    //         }
-    //     })
-    // })
 
 </script>
 </body>
